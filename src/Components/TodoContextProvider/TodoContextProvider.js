@@ -8,18 +8,6 @@ const TodoContextProvider = (props) => {
     const [filterState, setFilterState] = useState('all');
     const [filteredTodo, setFilteredTodo] = useState([]);
 
-    useEffect(
-        () => {
-            getLocal();
-        }
-    , [])
-
-    useEffect(() => {
-        filterHandler();
-        saveLocal();
-        // getLocal();
-    }, [filterState, todo, filterHandler, saveLocal])
-
     const filterHandler = useCallback(() => {
         switch (filterState){
             case 'all':
@@ -34,11 +22,11 @@ const TodoContextProvider = (props) => {
             default:
                 setFilteredTodo(todo);
         }
-    })
+    },[filterState,todo])
 
     const saveLocal = useCallback(() => {
         localStorage.setItem('todo', JSON.stringify(todo));
-    })
+    },[todo])
 
     const getLocal = () => {
         if (localStorage.getItem('todo') === null){
@@ -48,6 +36,18 @@ const TodoContextProvider = (props) => {
             setTodo(todo);
         }
     }
+
+    useEffect(
+        () => {
+            getLocal();
+        }
+    , [])
+
+    useEffect(() => {
+        filterHandler();
+        saveLocal();
+        // getLocal();
+    }, [filterState, todo, filterHandler, saveLocal])
     
 
     const changeTodo = (list) => {
