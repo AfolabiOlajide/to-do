@@ -18,7 +18,11 @@ const TodoContextProvider = (props) => {
         filterHandler();
         saveLocal();
         // getLocal();
-    }, [filterState, todo, filterHandler, saveLocal])
+        return () => {
+            filterHandler();
+        saveLocal();
+        }
+    }, [filterState, todo])
 
     const filterHandler = () => {
         switch (filterState){
