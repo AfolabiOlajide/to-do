@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import TodoContext from '../../Context/todoContext';
 
@@ -18,13 +18,9 @@ const TodoContextProvider = (props) => {
         filterHandler();
         saveLocal();
         // getLocal();
-        return () => {
-            filterHandler();
-        saveLocal();
-        }
-    }, [filterState, todo])
+    }, [filterState, todo, filterHandler, saveLocal])
 
-    const filterHandler = () => {
+    const filterHandler = useCallback(() => {
         switch (filterState){
             case 'all':
                 setFilteredTodo(todo);
@@ -38,11 +34,11 @@ const TodoContextProvider = (props) => {
             default:
                 setFilteredTodo(todo);
         }
-    }
+    })
 
-    const saveLocal = () => {
+    const saveLocal = useCallback(() => {
         localStorage.setItem('todo', JSON.stringify(todo));
-    }
+    })
 
     const getLocal = () => {
         if (localStorage.getItem('todo') === null){
