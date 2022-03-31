@@ -1,0 +1,22 @@
+.form {
+	margin-left: 5rem;
+}
+
+.form input {
+	font-size: 1rem;
+	padding: 3px 10px;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 450px) {
+	.hide {
+		display: none;
+	}
+
+	.form {
+		margin-left: 0;
+	}
+}

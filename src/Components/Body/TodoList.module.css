@@ -1,0 +1,15 @@
+.todo {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	min-height: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.nothing {
+	align-self: center;
+	font-size: 2rem;
+	color: rgb(26, 58, 58);
+}

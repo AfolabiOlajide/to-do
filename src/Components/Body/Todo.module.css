@@ -1,0 +1,37 @@
+.todoBox {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.todo {
+	display: flex;
+	justify-content: space-between;
+}
+
+.actions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.completed {
+	color: rgb(204, 204, 204);
+	/* text-decoration: line-through; */
+}
+
+.mr {
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+	.todo {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.actions {
+		display: block;
+		margin-top: 10px;
+	}
+}
