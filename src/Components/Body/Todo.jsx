@@ -35,8 +35,9 @@ const Todo = (props) => {
           <span>{date.getDate()}, {months[date.getMonth()]} {date.getFullYear()}</span>
         </div>
         <div className={classes.actions}>
-          <Button className={classes.mr} onClick={deleteTodoHandler}>Delete</Button>
-          <Button onClick={completedHandler}>{props.isCompleted ? 'not completed' : 'Completed'}</Button>
+          <Button className={classes.b1} onClick={deleteTodoHandler}><i className="fa-solid fa-trash-can"></i></Button>
+          <Button className={classes.b2} onClick={completedHandler}>{props.isCompleted ? <i className={`fa-solid fa-ban ${classes.grey}`}></i> : <i className={`fa-solid fa-check ${classes.green}`}></i>}</Button>
+          {/* <i class="fa-solid fa-check"></i> */}
         </div>
       </div>
     </Card>

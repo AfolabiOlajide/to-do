@@ -20,8 +20,24 @@
 	/* text-decoration: line-through; */
 }
 
-.mr {
+.b1 {
 	margin-right: 10px;
+	color: red;
+	background-color: white;
+	font-size: 1.5rem;
+}
+
+.b2{
+	background-color: white;
+	font-size: 1.5rem;
+}
+
+.green{
+	color: rgb(38, 133, 38);
+}
+
+.grey{
+	color: rgb(39, 53, 39);
 }
 
 @media screen and (max-width: 768px) {
